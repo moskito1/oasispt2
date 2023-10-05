@@ -263,6 +263,7 @@
   align-items: center;
   justify-content: center;
   gap: 60px;
+  margin-bottom: 40px;
 }
 
 .category-button .menu-category {
@@ -273,4 +274,21 @@
 
 .category-button .menu-category.active {
   color: black;
+}
+
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  width: 450px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.product-img {
+  width: 280px;
+  height: 280px;
 }
