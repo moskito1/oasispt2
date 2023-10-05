@@ -220,7 +220,11 @@
 }
 
 .login-container a {
-  color: blue;
+  color: white;
+}
+
+.signup-link a {
+  text-decoration: underline;
 }
 
 /* login / signup end */
@@ -241,6 +245,9 @@
 .menu-title h1 {
   font-size: 2.5em;
   font-weight: 500;
+  margin-top: 60px;
+  margin-bottom: 25px;
+  letter-spacing: 0.2em;
 }
 
 .category-list {
@@ -249,15 +256,21 @@
   justify-content: center;
 }
 
-.category-list ul {
-  list-style: none;
+.category-button {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 60px;
 }
 
-.category-list a {
-  color: black;
+.category-button button {
+  background: none;
+  border: none;
+  cursor: pointer;
   font-size: 1.5em;
+  color: #8d8d8d;
+}
+
+.category-button .menu-category.active {
+  color: black;
 }

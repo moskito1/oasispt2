@@ -19,36 +19,25 @@
       </div>
         <form action="signup_formprocess.php" method="POST">
         <div class="form-field">
-          <input type="text" name="firstname" pattern="[A-Za-z\s]+" required>
-          <label for="firstname">First Name</label>
-         </div>
-        <div class="form-field">
-            <input type="text" name="lastname" pattern="[A-Za-z\s]+" required>
-            <label for="lastname">Last Name</label>
-        </div>
-        <div class="form-field">
-            <input type="text" name="address" required>
-            <label for="address">Address</label>
-        </div>
-        <div class="form-field">
             <input type="text" name="username" required>
             <label for="username">Username</label>
-        </div>
-        <div class="form-field">
-            <input type="password" name="password" required>
-            <label for="password">Password</label>
         </div>
         <div class="form-field">
             <input type="email" name="email" required>
             <label for="email">Email</label>
         </div>
         <div class="form-field">
-            <input type="tel" name="contact_number" required>
-            <label for="contact_number">Contact Number</label>
+            <input type="password" name="password" required>
+            <label for="password">Password</label>
+        </div>
+        <div class="form-field">
+            <input type="password" name="confirm_password" required>
+            <label for="password">Re-enter Password</label>
         </div>
         <div class="signup-button">
             <input type="submit" class="signup-btn" name="signup" value="SIGN UP">
         </div> 
+        
             </form>
       </div>
 

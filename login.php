@@ -34,7 +34,9 @@
             <input type="submit" class="login-btn" value="LOGIN" name="login">
           </div>
         </form>
+        <div class="signup-link">
         <p>Don't have an account? <span><a href="signup.php">Sign up here.</a></span></p>
+        </div>
       </div>
   </section>
 
