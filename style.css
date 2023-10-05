@@ -5,6 +5,7 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
+  color: black;
 }
 
 /* header start */
@@ -234,6 +235,7 @@
 .menu-header {
   height: 50vh;
   background-image: url(imgs/LandingPgBackGOasisCafe.svg);
+  position: sticky;
 }
 
 .menu-title {
@@ -263,9 +265,7 @@
   gap: 60px;
 }
 
-.category-button button {
-  background: none;
-  border: none;
+.category-button .menu-category {
   cursor: pointer;
   font-size: 1.5em;
   color: #8d8d8d;

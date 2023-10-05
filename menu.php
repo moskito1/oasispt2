@@ -1,47 +1,59 @@
+<?php
+session_start();
+include('dbconnection.php');
+
+// Default category is "ALL" if not specified
+$category = isset($_GET['category']) ? $_GET['category'] : "ALL";
+
+if ($category === "ALL") {
+    // Fetch all products
+    $query = "SELECT * FROM products";
+} else {
+    // Fetch products for the selected category
+    $query = "SELECT * FROM products WHERE category = :category";
+}
+
+$stmt = $connection->prepare($query);
+
+if ($category !== "ALL") {
+    $stmt->bindParam(':category', $category, PDO::PARAM_STR);
+}
+
+$stmt->execute();
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu - Oasis</title>
- 
+    <!-- Your head content here -->
 </head>
 <body>
-  <section class="menu-header">
+<section class="menu-header">
     <?php include "header.php"; ?>
-  </section>
-  <section class="menu-body">
+</section>
+<section class="menu-body">
     <div class="menu-title">
-     <h1>MENU</h1>
+        <h1>MENU</h1>
     </div>
     <div class="category-list">
-      <div class="category-button">
-      <button class="menu-category active">ALL</button>
-      <button class="menu-category">BEST SELLER</button>
-      <button class="menu-category">ESPRESSO</button>
-      <button class="menu-category">NON-COFFEE</button>
-      </div>
-     
+        <div class="category-button">
+            <a href="?category=ALL" class="menu-category <?php if ($category === "ALL") echo "active"; ?>">ALL</a>
+            <a href="?category=ESPRESSO" class="menu-category <?php if ($category === "ESPRESSO") echo "active"; ?>">ESPRESSO</a>
+            <a href="?category=NON%20ESPRESSO" class="menu-category <?php if ($category === "NON ESPRESSO") echo "active"; ?>">NON ESPRESSO</a>
+        </div>
     </div>
-  </section>
-  <script>
-  var menuActive = document.querySelectorAll(".menu-category");
-
-  var category = function (categoryClick) {
-    // Remove the "active" class from all buttons
-    menuActive.forEach((btn) => {
-      btn.classList.remove('active');
-    });
-    // Add the "active" class to the clicked button
-    menuActive[categoryClick].classList.add('active');
-  };
-
-  menuActive.forEach((categoryActive, index) => {
-    categoryActive.addEventListener("click", () => {
-      category(index);
-    });
-  });
-
-  </script>
+    <div class="menu-card">
+        <?php
+        foreach ($result as $row) {
+            echo '<div class="product-card">';
+            echo '<img src="' . $row['img'] . '" alt="' . $row['prodname'] . '">';
+            echo '<h2>' . $row['prodname'] . '</h2>';
+            echo '<p>Price: ' . $row['price'] . '</p>';
+            echo '</div>';
+        }
+        ?>
+    </div>
+</section>
 </body>
 </html>
