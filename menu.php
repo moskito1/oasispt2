@@ -47,7 +47,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php
         foreach ($result as $row) {
             echo '<div class="product-card">';
-            echo '<img src="' . $row['img'] . '" alt="' . $row['prodname'] . '">';
+              echo '<img src="' . $row['img'] .  '" class="product-img">';
             echo '<h2>' . $row['prodname'] . '</h2>';
             echo '<p>Price: ' . $row['price'] . '</p>';
             echo '</div>';

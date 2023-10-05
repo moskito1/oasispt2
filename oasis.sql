@@ -18,18 +18,18 @@ CREATE TABLE products (
 );
 
 INSERT INTO products 
-VALUES (1, 'Iced Americano', 120.00, '', 'Espresso/Best Seller'),
-(2, 'Iced Latte', 125.00, '', 'Espresso'),
-(3, 'Cold Brew', 120.00, '', 'Espresso'),
-(4, 'Iced Mocha', 130.00, ' ', 'Espresso'),
-(5, 'Iced Vanilla Latte', 130.00, '', 'Espresso'),
-(6, 'Iced Caramel Machitto', 130.00, '', 'Espresso'),
-(7, 'Iced Cappucino', 135.00, '', 'Espresso'),
-(8, 'Iced Spanish Latte', 120.00, '', 'Espresso'),
-(9, 'Vietnamese Iced Coffee', 120.00, '', 'Espresso'),
-(10, 'Matcha Latte', 130.00, '', 'Non Espresso'),
-(11, 'Strawberry Milk', 120.00, '', 'Non Espresso'),
-(12, 'Lemonade', 120.00, '', 'Non Espresso'),
-(13, 'GrapeFruit Ade', 120.00, '', 'Non Espresso'),
-(14, 'Iced Hibiscus Cooler', 120.00, '', 'Non Espresso'),
-(15, 'ICed Chai Tea Latte', 120.00, '', 'Non Espresso');
+VALUES (1, 'Iced Americano', 120.00, 'imgs/Menu/16.jpg', 'Espresso/Best Seller'),
+(2, 'Iced Latte', 125.00, 'imgs/Menu/15.jpg', 'Espresso'),
+(3, 'Cold Brew', 120.00, 'imgs/Menu/14.jpg', 'Espresso'),
+(4, 'Iced Mocha', 130.00, 'imgs/Menu/13.jpg', 'Espresso'),
+(5, 'Iced Vanilla Latte', 130.00, 'imgs/Menu/12.jpg', 'Espresso'),
+(6, 'Iced Caramel Machitto', 130.00, 'imgs/Menu/10.jpg', 'Espresso'),
+(7, 'Iced Cappucino', 135.00, 'imgs/Menu/9.jpg', 'Espresso'),
+(8, 'Iced Spanish Latte', 120.00, 'imgs/Menu/8.jpg', 'Espresso'),
+(9, 'Vietnamese Iced Coffee', 120.00, 'imgs/Menu/7.jpg', 'Espresso'),
+(10, 'Matcha Latte', 130.00, 'imgs/Menu/6.jpg', 'Non Espresso'),
+(11, 'Strawberry Milk', 120.00, 'imgs/Menu/5.jpg', 'Non Espresso'),
+(12, 'Lemonade', 120.00, 'imgs/Menu/4.jpg', 'Non Espresso'),
+(13, 'GrapeFruit Ade', 120.00, 'imgs/Menu/3.jpg', 'Non Espresso'),
+(14, 'Iced Hibiscus Cooler', 120.00, 'imgs/Menu/2.jpg', 'Non Espresso'),
+(15, 'ICed Chai Tea Latte', 120.00, 'imgs/Menu/1.jpg', 'Non Espresso');
