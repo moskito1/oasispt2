@@ -18,7 +18,7 @@ CREATE TABLE products (
 );
 
 INSERT INTO products 
-VALUES (1, 'Iced Americano', 120.00, 'imgs/Menu/16.jpg', 'Espresso/Best Seller'),
+VALUES (1, 'Iced Americano', 120.00, 'imgs/Menu/16.jpg', 'Espresso'),
 (2, 'Iced Latte', 125.00, 'imgs/Menu/15.jpg', 'Espresso'),
 (3, 'Cold Brew', 120.00, 'imgs/Menu/14.jpg', 'Espresso'),
 (4, 'Iced Mocha', 130.00, 'imgs/Menu/13.jpg', 'Espresso'),
