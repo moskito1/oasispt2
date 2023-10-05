@@ -2,14 +2,11 @@
 session_start();
 include('dbconnection.php');
 
-// Default category is "ALL" if not specified
 $category = isset($_GET['category']) ? $_GET['category'] : "ALL";
 
 if ($category === "ALL") {
-    // Fetch all products
     $query = "SELECT * FROM products";
 } else {
-    // Fetch products for the selected category
     $query = "SELECT * FROM products WHERE category = :category";
 }
 
@@ -26,7 +23,6 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Your head content here -->
 </head>
 <body>
 <section class="menu-header">
@@ -44,15 +40,19 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
     <div class="menu-card">
-        <?php
+      <div class="product-row">
+      <?php
+        
         foreach ($result as $row) {
             echo '<div class="product-card">';
               echo '<img src="' . $row['img'] .  '" class="product-img">';
-            echo '<h2>' . $row['prodname'] . '</h2>';
+            echo '<p class="product-name">' . $row['prodname'] . '</p>';
             echo '<p>Price: ' . $row['price'] . '</p>';
             echo '</div>';
         }
         ?>
+      </div>
+       
     </div>
 </section>
 </body>
