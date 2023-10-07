@@ -1,11 +1,12 @@
 <?php
-    define('USER', 'root');
-    define('PASSWORD', '');
-    define('HOST', 'localhost');
-    define('DATABASE', 'oasis');
-    try {
-        $connection = new PDO("mysql:host=".HOST.";dbname=".DATABASE, USER, PASSWORD);
-    } catch (PDOException $e) {
-        exit("Error: " . $e->getMessage());
+
+    $serverName = "localhost";
+    $dbUsername = "root";
+    $dbPassword = "";
+    $dbName = "oasis";
+
+    $conn = mysqli_connect($serverName, $dbUsername, $dbPassword, $dbName);
+
+    if (!$conn){
+        die("Connection failed: " . mysqli_connect_error());
     }
-?>
