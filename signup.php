@@ -19,6 +19,14 @@
       </div>
         <form action="signup_formprocess.php" method="POST">
         <div class="form-field">
+            <input type="text" name="firstname" required>
+            <label for="firstname">First Name</label>
+        </div>
+        <div class="form-field">
+            <input type="text" name="lastname" required>
+            <label for="lastname">Last Name</label>
+        </div>
+        <div class="form-field">
             <input type="text" name="username" required>
             <label for="username">Username</label>
         </div>
@@ -31,7 +39,7 @@
             <label for="password">Password</label>
         </div>
         <div class="form-field">
-            <input type="password" name="confirm_password" required>
+            <input type="password" name="passwordRepeat" required>
             <label for="password">Re-enter Password</label>
         </div>
         <div class="signup-button">
