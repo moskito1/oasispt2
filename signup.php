@@ -11,7 +11,6 @@
   <?php include "header.php"; ?>
 
   <section class="signup">
-  <section class="col">
       <div class="signup-container">
       <div class="title">
         <img src="imgs/logo-typo.png" alt="">
@@ -48,8 +47,32 @@
         
             </form>
       </div>
+   <?php 
+   if (isset($_GET["error"])) {
 
-  </section>
+    if ($_GET["error"] == "emptyinput") { 
+      echo "<p>Fill in all fields!</p>";
+    }
+    else if ($_GET["error"] == "invalidusername") { 
+      echo "<p>Choose a proper username!</p>";
+    }
+    else if ($_GET["error"] == "invalidemail") { 
+      echo "<p>Choose a proper email!</p>";
+    }
+    else if ($_GET["error"] == "passwordsdontmatch") { 
+      echo "<p>Passwords doesn't match!</p>";
+    }
+    else if ($_GET["error"] == "stmtfailed") { 
+      echo "<p>Something went wrong, try again!</p>";
+    } 
+    else if ($_GET["error"] == "usernametaken") {
+      echo "<p>Username is already taken!</p>";
+    }
+    else if ($_GET["error"] == "none") {
+      echo "<p>Success!</p>";
+    }
+  }
+    ?>
   </section>
 
   

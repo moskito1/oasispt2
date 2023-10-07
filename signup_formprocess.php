@@ -1,6 +1,9 @@
 <?php
 
-    if (isset($_POST["submit"])){
+include "dbconnection.php";
+include "functions.php";
+
+    if (isset($_POST["signup"])){
 
         $firstName = $_POST["firstname"];
         $lastName = $_POST["lastname"];
@@ -9,8 +12,6 @@
         $password = $_POST["password"];
         $passwordRepeat = $_POST["passwordRepeat"];
 
-        require_once 'dbconnection.php';
-        require_once 'functions.php';
         
         if (emptyInputSignup($firstName, $lastName, $username, $email, $password, $passwordRepeat) !== false){
             header("location: signup.php?error=emptyinput");
@@ -31,10 +32,10 @@
         if (usernameExists($conn, $username, $email) !== false){
             header("location: signup.php?error=usernametaken");
             exit();
-    } 
-
+        } 
     createUser($conn,$firstName, $lastName, $username, $email, $password, $passwordRepeat);
+    }
     else {
-        header("location: signup.php");
+        header("location: signup.php?error=none");
         exit();
     }

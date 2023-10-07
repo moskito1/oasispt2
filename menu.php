@@ -7,17 +7,27 @@ $category = isset($_GET['category']) ? $_GET['category'] : "ALL";
 if ($category === "ALL") {
     $query = "SELECT * FROM products";
 } else {
-    $query = "SELECT * FROM products WHERE category = :category";
+    $query = "SELECT * FROM products WHERE category = ?";
 }
 
-$stmt = $connection->prepare($query);
+$stmt = mysqli_prepare($conn, $query);
 
 if ($category !== "ALL") {
-    $stmt->bindParam(':category', $category, PDO::PARAM_STR);
+    mysqli_stmt_bind_param($stmt, 's', $category);
 }
 
-$stmt->execute();
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+mysqli_stmt_execute($stmt);
+
+$result = mysqli_stmt_get_result($stmt);
+
+// Fetch data into an associative array
+$data = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $data[] = $row;
+}
+
+mysqli_stmt_close($stmt);
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
