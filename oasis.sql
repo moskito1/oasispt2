@@ -32,4 +32,4 @@ VALUES (1, 'Iced Americano', 120.00, 'imgs/Menu/16.jpg', 'Espresso'),
 (12, 'Lemonade', 120.00, 'imgs/Menu/4.jpg', 'Non Espresso'),
 (13, 'GrapeFruit Ade', 120.00, 'imgs/Menu/3.jpg', 'Non Espresso'),
 (14, 'Iced Hibiscus Cooler', 120.00, 'imgs/Menu/2.jpg', 'Non Espresso'),
-(15, 'ICed Chai Tea Latte', 120.00, 'imgs/Menu/1.jpg', 'Non Espresso');
+(15, 'Iced Chai Tea Latte', 120.00, 'imgs/Menu/1.jpg', 'Non Espresso');
