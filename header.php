@@ -5,7 +5,7 @@
 <body>
 <section class="header">
     <div class="left-nav-bar">
-      OASIS CAFE
+      <a href="index.php"><img src="imgs/logo.png" alt=""></a>
     </div>
     <div class="middle-nav-bar">
       <a href="index.php">HOME</a>

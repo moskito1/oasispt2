@@ -5,7 +5,6 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
-  color: black;
 }
 
 /* header start */
@@ -16,14 +15,14 @@
   flex-direction: row;
   height: 7.7vh;
   position: sticky;
+  background-color: white;
 }
 
-.left-nav-bar {
-  margin-left: 15px;
-}
-.middle-nav-bar a,
-.right-nav-bar a {
-  color: black;
+.left-nav-bar img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-left: 25px;
 }
 
 .middle-nav-bar {
@@ -41,6 +40,11 @@
 
 .right-nav-bar a {
   font-size: 1.3em;
+}
+
+.right-nav-bar a,
+.middle-nav-bar a {
+  color: black;
 }
 
 /* header end */
@@ -233,9 +237,8 @@
 /* menu start */
 
 .menu-header {
-  height: 50vh;
-  background-image: url(imgs/LandingPgBackGOasisCafe.svg);
   position: sticky;
+  top: 0;
 }
 
 .menu-title {
@@ -276,20 +279,32 @@
   color: black;
 }
 
-.product-row {
+.menu-card {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
 }
 
+.product-row {
+  display: grid;
+  grid-template-columns: 350px 350px 350px;
+  column-gap: 15px;
+}
+
 .product-card {
-  width: 450px;
-  margin-bottom: 20px;
+  width: 300px;
+  margin-bottom: 35px;
   text-align: center;
+  border: 1px solid black;
+  height: 400px;
 }
 
 .product-img {
-  width: 280px;
+  width: 100%;
   height: 280px;
-  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product-name {
+  font-weight: bold;
 }
