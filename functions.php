@@ -83,6 +83,39 @@
     exit();
   }
 
+  function emptyInputLogin($username, $password){
+    $result;
+    if(empty($username) || empty($password)){
+      $result = true;
+    }
+    else {
+      $result = false;
+    }
+    return $result;
+  }
 
+  function loginUser($conn, $username, $password){
+    $userExists = usernameExists($conn, $username, $username);
+
+    if ($userExists === false){
+      header("location: login.php?error=wronglogin");
+      exit();
+    }
+    
+    $password_hashed = $userExists["password"];
+    $checkPassword = password_verify($password, $password_hashed);
+
+    if ($checkPassword === false){
+      header("location: login.php?error=wronglogin");
+      exit();
+    }
+    else if($checkPassword === true){
+      session_start();
+      $_SESSION["id"] = $userExists["userid"];
+      $_SESSION["username"] = $userExists["username"];
+      header("location: index.php");
+      exit();
+    }
+  }
 
 

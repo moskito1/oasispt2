@@ -12,7 +12,6 @@ include "functions.php";
         $password = $_POST["password"];
         $passwordRepeat = $_POST["passwordRepeat"];
 
-        
         if (emptyInputSignup($firstName, $lastName, $username, $email, $password, $passwordRepeat) !== false){
             header("location: signup.php?error=emptyinput");
             exit();
