@@ -9,6 +9,15 @@
     }
     return $result;
   }
+  function invalidName($firstName, $lastName) {
+    $result;
+    if (!preg_match("/^[a-zA-Z]*$/", $firstName, $lastName)){
+      $result = true;
+    } else {
+      $result = false;
+    }
+    return $result;
+  }
 
   function invalidUsername($username) {
     $result;

@@ -16,6 +16,10 @@ include "functions.php";
             header("location: signup.php?error=emptyinput");
             exit();
         } 
+        if (invalidName($firstName, $lastName)){
+            header("location: signup.php?error=invalidname");
+            exit();
+        }
         if (invalidUsername($username) !== false){
             header("location: signup.php?error=invalidusername");
             exit();
