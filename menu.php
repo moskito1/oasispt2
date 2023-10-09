@@ -20,7 +20,6 @@ mysqli_stmt_execute($stmt);
 
 $result = mysqli_stmt_get_result($stmt);
 
-// Fetch data into an associative array
 $data = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $data[] = $row;
@@ -55,7 +54,7 @@ mysqli_close($conn);
         
         foreach ($result as $row) {
             echo '<div class="product-card">';
-              echo '<img src="' . $row['img'] .  '" class="product-img">';
+            echo '<img src="' . $row['img'] .  '" class="product-img">';
             echo '<p class="product-name">' . $row['prodname'] . '</p>';
             echo '<p>Price: ₱' . $row['price'] . '</p>';
             echo '</div>';

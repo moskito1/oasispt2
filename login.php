@@ -13,7 +13,6 @@
   <section class="login">
       <div class="login-container">
         <div class="title">
-        <img src="imgs/logo-typo.png" alt="">
         <h2>LOGIN</h2>
         </div>
         <form method="POST" action="formprocess.php" id="customer-login">

@@ -10,38 +10,44 @@
 
 </head>
 <body>
-  <?php include "header.php"; ?>
+  <?php include "header.php"; 
+  ?>
 
   <section class="signup">
       <div class="signup-container">
       <div class="title">
-        <img src="imgs/logo-typo.png" alt="">
       <h2>SIGN UP</h2>
       </div>
-        <form action="signup_formprocess.php" method="POST">
+        <form action="signup_formprocess.php" method="POST" id="signupform">
         <div class="form-field">
-            <input type="text" name="firstname" required>
+            <input type="text" name="firstname" id="firstname" required>
             <label for="firstname">First Name</label>
+            <small>Error Message</small>           
         </div>
         <div class="form-field">
-            <input type="text" name="lastname" required>
+            <input type="text" name="lastname" id="lastname" required>
             <label for="lastname">Last Name</label>
+            <small>Error Message</small>           
         </div>
         <div class="form-field">
-            <input type="text" name="username" required>
+            <input type="text" name="username" id="username" required>
             <label for="username">Username</label>
+            <small>Error Message</small>           
         </div>
         <div class="form-field">
-            <input type="email" name="email" required>
+            <input type="email" name="email" id="email" required>
             <label for="email">Email</label>
+            <small>Error Message</small>           
         </div>
         <div class="form-field">
-            <input type="password" name="password" required>
+            <input type="password" name="password" id="password" required>
             <label for="password">Password</label>
+            <small>Error Message</small>           
         </div>
         <div class="form-field">
-            <input type="password" name="passwordRepeat" required>
+            <input type="password" name="passwordRepeat" id="passwordRepeat" required>
             <label for="password">Re-enter Password</label>
+            <small>Error Message</small>           
         </div>
         <div class="signup-button">
             <input type="submit" class="signup-btn" name="signup" value="SIGN UP">
@@ -53,5 +59,5 @@
 
   
 </body>
-
+<script src="script.js" async></script>
 </html>

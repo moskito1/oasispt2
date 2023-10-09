@@ -12,6 +12,7 @@ include "functions.php";
         $password = $_POST["password"];
         $passwordRepeat = $_POST["passwordRepeat"];
 
+
         if (emptyInputSignup($firstName, $lastName, $username, $email, $password, $passwordRepeat) !== false){
             header("location: signup.php?error=emptyinput");
             exit();
@@ -39,6 +40,6 @@ include "functions.php";
     createUser($conn,$firstName, $lastName, $username, $email, $password, $passwordRepeat);
     }
     else {
-        header("location: signup.php?error=none");
+        header("location: login.php");
         exit();
     }
