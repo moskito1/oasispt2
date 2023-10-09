@@ -8,10 +8,9 @@ const repeatPassword = document.getElementById("passwordRepeat");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (Validate(form)) {
-    form.submit(); // Submit the form if validation passes
-  }
+  Validate(form);
 });
+
 function Validate(form) {
   const usernameVal = username.value.trim();
   const firstnameVal = firstName.value.trim();
