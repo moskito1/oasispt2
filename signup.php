@@ -59,5 +59,6 @@
 
   
 </body>
-<script src="script.js" async></script>
+<script src="script.js" ></script>
+
 </html>

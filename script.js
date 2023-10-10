@@ -1,4 +1,4 @@
-const form = document.getElementById("signupform");
+const formElement = document.getElementById("signupform");
 const firstName = document.getElementById("firstname");
 const lastName = document.getElementById("lastname");
 const username = document.getElementById("username");
@@ -6,12 +6,13 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const repeatPassword = document.getElementById("passwordRepeat");
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  Validate(form);
+formElement.addEventListener("submit", (event) => {
+  if (!Validate(formElement)) {
+    event.preventDefault();
+  }
 });
 
-function Validate(form) {
+function Validate(formElement) {
   const usernameVal = username.value.trim();
   const firstnameVal = firstName.value.trim();
   const lastnameVal = lastName.value.trim();
@@ -26,6 +27,7 @@ function Validate(form) {
   if (!firstnameVal.match(namePattern) || !lastnameVal.match(namePattern)) {
     setErrorMsg(firstName, "");
     setErrorMsg(lastName, "Name should only contain letters");
+    return false;
   } else {
     setErrorMsg(firstName, "");
     setErrorMsg(lastName, "");
@@ -34,6 +36,7 @@ function Validate(form) {
   // username validation
   if (!usernameVal.match(/^[A-Za-z0-9\s]+$/)) {
     setErrorMsg(username, "Username should only contain letters and numbers");
+    return false;
   } else {
     setErrorMsg(username, "");
   }
@@ -41,6 +44,7 @@ function Validate(form) {
   //email validation
   if (!emailVal.match(mailPattern)) {
     setErrorMsg(email, "Enter a valid email address");
+    return false;
   } else {
     setErrorMsg(email, "");
   }
@@ -48,9 +52,12 @@ function Validate(form) {
   // repeat password validation
   if (passwordVal !== repeatPasswordVal) {
     setErrorMsg(repeatPassword, "Passwords don't match");
+    return false;
   } else {
     setErrorMsg(repeatPassword, "");
   }
+
+  return true;
 }
 
 function setErrorMsg(input, errormsg) {

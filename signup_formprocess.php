@@ -1,45 +1,27 @@
 <?php
+include ('dbconnection.php');
+if (isset($_POST["signup"])) {
 
-include "dbconnection.php";
-include "functions.php";
+    $firstName = $_POST["firstname"];
+    $lastName = $_POST["lastname"];
+    $username = $_POST["username"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $passwordRepeat = $_POST["passwordRepeat"];
 
-    if (isset($_POST["signup"])){
-
-        $firstName = $_POST["firstname"];
-        $lastName = $_POST["lastname"];
-        $username = $_POST["username"];
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-        $passwordRepeat = $_POST["passwordRepeat"];
-
-
-        if (emptyInputSignup($firstName, $lastName, $username, $email, $password, $passwordRepeat) !== false){
-            header("location: signup.php?error=emptyinput");
-            exit();
-        } 
-        if (invalidName($firstName, $lastName)){
-            header("location: signup.php?error=invalidname");
-            exit();
-        }
-        if (invalidUsername($username) !== false){
-            header("location: signup.php?error=invalidusername");
-            exit();
-        } 
-        if (invalidEmail($email) !== false){
-            header("location: signup.php?error=invalidemail");
-            exit();
-        } 
-        if (passwordMatch($password, $passwordRepeat) !== false){
-            header("location: signup.php?error=passwordsdontmatch");
-            exit();
-        }
-        if (usernameExists($conn, $username, $email) !== false){
-            header("location: signup.php?error=usernametaken");
-            exit();
-        } 
-    createUser($conn,$firstName, $lastName, $username, $email, $password, $passwordRepeat);
-    }
-    else {
-        header("location: login.php");
+    $sql = "INSERT INTO userInfo (firstname, lastname, username, email, password) VALUES (?, ?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: signup.php?error=connectionfailed");
         exit();
     }
+
+    $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+
+    mysqli_stmt_bind_param($stmt, "sssss", $firstName, $lastName, $username, $email, $password_hashed);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: login.php");
+    exit();
+}
