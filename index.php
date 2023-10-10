@@ -20,7 +20,7 @@ if (isset($_GET["logout"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oasis Cafe</title>
   </head>
-    <?php include "header.php"; ?>
+  <?php include "header.php"; ?>
 
     <section class="body">
       <div class="info-container">

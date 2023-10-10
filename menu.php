@@ -52,7 +52,7 @@ mysqli_close($conn);
       <div class="product-row">
       <?php
         
-        foreach ($result as $row) {
+        foreach ($data as $row) {
             echo '<div class="product-card">';
             echo '<img src="' . $row['img'] .  '" class="product-img">';
             echo '<p class="product-name">' . $row['prodname'] . '</p>';

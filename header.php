@@ -19,25 +19,61 @@ include "dbconnection.php";
     <div class="right-nav-bar">
         <a href=""><i class="fa fa-shopping-cart"></i></a>
         <?php if (isset($_SESSION["username"])) {
-            $username = $_SESSION['username'];
-            $sql = "SELECT userimg FROM userInfo WHERE username = ?";
-            $stmt = mysqli_stmt_init($conn);
+            include "get_user_info.php";
+            echo '<img src="' . $userProfilePicture . '" alt="User Profile Picture" class="userpicture">';
+        ?>
 
-            if (mysqli_stmt_prepare($stmt, $sql)){
-                mysqli_stmt_bind_param($stmt, "s", $username);
-                mysqli_stmt_execute($stmt);
-                $result = mysqli_stmt_get_result($stmt);
-
-                if ($row = mysqli_fetch_assoc($result)) { 
-                    $userProfilePicture = $row['userimg'];
-                    echo '<img src="' . $userProfilePicture . '" alt="User Profile Picture" class="userprofile">';
-                }
-                
-                mysqli_stmt_close($stmt);
-            }
-        } else { ?>
+        <div class="user-profile-dropdown">
+            <div class="user-profile">
+                <div class="user-info">
+                    <?php echo '<img src="' . $userProfilePicture . '" alt="User Profile Picture" class="dropdown-userpicture">'; 
+                        echo '<h4>'. $userFirstName . ' ' . $userLastName .'</h4>';
+                    ?>
+                </div>
+                <div class="user-settings">
+                  <div class="user-settings-items">
+                    <div class="user-settings-icon">
+                      <i class="fa fa-user"></i>
+                    </div>
+                    <div class="user-settings-title">
+                    <a href="">Profile Info</a>
+                    </div>
+                  </div>
+                  <div class="user-settings-items">
+                    <div class="user-settings-icon">
+                      <i class="fa fa-sign-out"></i>
+                    </div>
+                    <div class="user-settings-title">
+                      <a href="index.php?logout=1">Logout</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <?php } else { ?>
             <a href="login.php"><i id="user-icon" class="fa fa-solid fa-user"></i></a>
         <?php } ?>
     </div>
 </section>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get elements by class name, so use getElementsByClassName
+        let userProfileToggle = document.querySelector(".userpicture");
+        let userProfileDropdown = document.querySelector(".user-profile-dropdown");
+
+        if (userProfileToggle && userProfileDropdown) {
+            userProfileToggle.addEventListener("click", () => {
+                userProfileDropdown.classList.toggle("active");
+            });
+
+            window.addEventListener("click", (event) => {
+                if (!event.target.matches(".userpicture")) {
+                    userProfileDropdown.classList.remove("active");
+                }
+            });
+        }
+    });
+</script>
+
+</html>
