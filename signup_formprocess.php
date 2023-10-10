@@ -9,7 +9,7 @@ if (isset($_POST["signup"])) {
     $password = $_POST["password"];
     $passwordRepeat = $_POST["passwordRepeat"];
 
-    $sql = "INSERT INTO userInfo (firstname, lastname, username, email, password) VALUES (?, ?, ?, ?, ?);";
+    $sql = "INSERT INTO userInfo (firstname, lastname, username, email, password, userimg) VALUES (?, ?, ?, ?, ?, 'imgs/default-user-profile/default-profile.jpg');";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: signup.php?error=connectionfailed");
