@@ -4,7 +4,10 @@ firstname varchar(60) NOT NULL,
 lastname varchar(60) NOT NULL,
 username varchar (30) UNIQUE NOT NULL, 
 email varchar(200) UNIQUE NOT NULL,
-password varchar(255) NOT NULL
+password varchar(255) NOT NULL,
+useraddress varchar(255),
+contactno varchar(255),
+userimg text
 );
 
 CREATE TABLE products (
