@@ -33,6 +33,7 @@
 .right-nav-bar {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   gap: 15px;
   margin-right: 20px;
@@ -45,6 +46,13 @@
 .right-nav-bar a,
 .middle-nav-bar a {
   color: black;
+}
+
+.userprofile {
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
 }
 
 /* header end */
