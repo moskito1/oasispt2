@@ -1,68 +1,69 @@
 <?php
+//ayusin ko pa lagyan pic, font, n other shit//
 session_start();
 require 'cart_connector.php';
 
 // 1st line pradaks//
 $products = array(
     array('id' => 0, 'user_id' => 1, 'Item_Name' => 'Iced Americano', 'size_oz' => 'Original', 'price' => 120.00),
-    array('id' => 0, 'user_id' => 1, 'Item_Name' => 'Iced Americano', 'size_oz' => 'Medium', 'price' => 130.00),
-    array('id' => 0, 'user_id' => 1, 'Item_Name' => 'Iced Americano', 'size_oz' => 'Large', 'price' => 140.00),
+    array('id' => 1, 'user_id' => 2, 'Item_Name' => 'Iced Americano', 'size_oz' => 'Medium', 'price' => 130.00),
+    array('id' => 2, 'user_id' => 3, 'Item_Name' => 'Iced Americano', 'size_oz' => 'Large', 'price' => 140.00),
 
-    array('id' => 1, 'user_id' => 2, 'Item_Name' => 'Iced Latte', 'size_oz' => 'Original', 'price' => 125.00),
-    array('id' => 1, 'user_id' => 2, 'Item_Name' => 'Iced Latte', 'size_oz' => 'Medium', 'price' => 135.00),
-    array('id' => 1, 'user_id' => 2, 'Item_Name' => 'Iced Latte', 'size_oz' => 'Large', 'price' => 145.00),
+    array('id' => 3, 'user_id' => 4, 'Item_Name' => 'Iced Latte', 'size_oz' => 'Original', 'price' => 125.00),
+    array('id' => 4, 'user_id' => 5, 'Item_Name' => 'Iced Latte', 'size_oz' => 'Medium', 'price' => 135.00),
+    array('id' => 5, 'user_id' => 6, 'Item_Name' => 'Iced Latte', 'size_oz' => 'Large', 'price' => 145.00),
 
-    array('id' => 2, 'user_id' => 3, 'Item_Name' => 'Cold Brew', 'size_oz' => 'Original', 'price' => 120.00),
-    array('id' => 2, 'user_id' => 3, 'Item_Name' => 'Cold Brew', 'size_oz' => 'Medium', 'price' => 130.00),
-    array('id' => 2, 'user_id' => 3, 'Item_Name' => 'Cold Brew', 'size_oz' => 'Large', 'price' => 140.00),
+    array('id' => 6, 'user_id' => 7, 'Item_Name' => 'Cold Brew', 'size_oz' => 'Original', 'price' => 120.00),
+    array('id' => 7, 'user_id' => 8, 'Item_Name' => 'Cold Brew', 'size_oz' => 'Medium', 'price' => 130.00),
+    array('id' => 8, 'user_id' => 9, 'Item_Name' => 'Cold Brew', 'size_oz' => 'Large', 'price' => 140.00),
 
-    array('id' => 3, 'user_id' => 4, 'Item_Name' => 'Iced Mocha', 'size_oz' => 'Original', 'price' => 130.00),
-    array('id' => 3, 'user_id' => 4, 'Item_Name' => 'Iced Mocha', 'size_oz' => 'Medium', 'price' => 140.00),
-    array('id' => 3, 'user_id' => 4, 'Item_Name' => 'Iced Mocha', 'size_oz' => 'Large', 'price' => 150.00),
+    array('id' => 9, 'user_id' => 10, 'Item_Name' => 'Iced Mocha', 'size_oz' => 'Original', 'price' => 130.00),
+    array('id' => 10, 'user_id' => 11, 'Item_Name' => 'Iced Mocha', 'size_oz' => 'Medium', 'price' => 140.00),
+    array('id' => 11, 'user_id' => 12, 'Item_Name' => 'Iced Mocha', 'size_oz' => 'Large', 'price' => 150.00),
 
-    array('id' => 4, 'user_id' => 5, 'Item_Name' => 'Iced Vanilla Latte', 'size_oz' => 'Original', 'price' => 130.00),
-    array('id' => 4, 'user_id' => 5, 'Item_Name' => 'Iced Vanilla Latte', 'size_oz' => 'Medium', 'price' => 140.00),
-    array('id' => 4, 'user_id' => 5, 'Item_Name' => 'Iced Vanilla Latte', 'size_oz' => 'Large', 'price' => 150.00),
+    array('id' => 12, 'user_id' => 13, 'Item_Name' => 'Iced Vanilla Latte', 'size_oz' => 'Original', 'price' => 130.00),
+    array('id' => 13, 'user_id' => 14, 'Item_Name' => 'Iced Vanilla Latte', 'size_oz' => 'Medium', 'price' => 140.00),
+    array('id' => 14, 'user_id' => 15, 'Item_Name' => 'Iced Vanilla Latte', 'size_oz' => 'Large', 'price' => 150.00),
 
-    array('id' => 5, 'user_id' => 6, 'Item_Name' => 'Iced Caramel Macchiato', 'size_oz' => 'Original', 'price' => 130.00),
-    array('id' => 5, 'user_id' => 6, 'Item_Name' => 'Iced Caramel Macchiato', 'size_oz' => 'Medium', 'price' => 140.00),
-    array('id' => 5, 'user_id' => 6, 'Item_Name' => 'Iced Caramel Macchiato', 'size_oz' => 'Large', 'price' => 150.00),
+    array('id' => 15, 'user_id' => 16, 'Item_Name' => 'Iced Caramel Macchiato', 'size_oz' => 'Original', 'price' => 130.00),
+    array('id' => 16, 'user_id' => 17, 'Item_Name' => 'Iced Caramel Macchiato', 'size_oz' => 'Medium', 'price' => 140.00),
+    array('id' => 17, 'user_id' => 18, 'Item_Name' => 'Iced Caramel Macchiato', 'size_oz' => 'Large', 'price' => 150.00),
 
-    array('id' => 6, 'user_id' => 7, 'Item_Name' => 'Iced Cappucino', 'size_oz' => 'Original', 'price' => 135.00),
-    array('id' => 6, 'user_id' => 7, 'Item_Name' => 'Iced Cappucino', 'size_oz' => 'Medium', 'price' => 145.00),
-    array('id' => 6, 'user_id' => 7, 'Item_Name' => 'Iced Cappucino', 'size_oz' => 'Large', 'price' => 155.00),
+    array('id' => 18, 'user_id' => 19, 'Item_Name' => 'Iced Cappucino', 'size_oz' => 'Original', 'price' => 135.00),
+    array('id' => 19, 'user_id' => 20, 'Item_Name' => 'Iced Cappucino', 'size_oz' => 'Medium', 'price' => 145.00),
+    array('id' => 20, 'user_id' => 21, 'Item_Name' => 'Iced Cappucino', 'size_oz' => 'Large', 'price' => 155.00),
 
-    array('id' => 7, 'user_id' => 8, 'Item_Name' => 'Iced Spanish Latte', 'size_oz' => 'Original', 'price' => 120.00),
-    array('id' => 7, 'user_id' => 8, 'Item_Name' => 'Iced Spanish Latte', 'size_oz' => 'Medium', 'price' => 130.00),
-    array('id' => 7, 'user_id' => 8, 'Item_Name' => 'Iced Spanish Latte', 'size_oz' => 'Large', 'price' => 140.00),
+    array('id' => 21, 'user_id' => 22, 'Item_Name' => 'Iced Spanish Latte', 'size_oz' => 'Original', 'price' => 120.00),
+    array('id' => 22, 'user_id' => 23, 'Item_Name' => 'Iced Spanish Latte', 'size_oz' => 'Medium', 'price' => 130.00),
+    array('id' => 23, 'user_id' => 24, 'Item_Name' => 'Iced Spanish Latte', 'size_oz' => 'Large', 'price' => 140.00),
 
-    array('id' => 8, 'user_id' => 9, 'Item_Name' => 'Vietnamese Iced Coffee', 'size_oz' => 'Original', 'price' => 120.00),
-    array('id' => 8, 'user_id' => 9, 'Item_Name' => 'Vietnamese Iced Coffee', 'size_oz' => 'Medium', 'price' => 130.00),
-    array('id' => 8, 'user_id' => 9, 'Item_Name' => 'Vietnamese Iced Coffee', 'size_oz' => 'Large', 'price' => 140.00),
+    array('id' => 24, 'user_id' => 25, 'Item_Name' => 'Vietnamese Iced Coffee', 'size_oz' => 'Original', 'price' => 120.00),
+    array('id' => 25, 'user_id' => 26, 'Item_Name' => 'Vietnamese Iced Coffee', 'size_oz' => 'Medium', 'price' => 130.00),
+    array('id' => 26, 'user_id' => 27, 'Item_Name' => 'Vietnamese Iced Coffee', 'size_oz' => 'Large', 'price' => 140.00),
 
-    array('id' => 9, 'user_id' => 10, 'Item_Name' => 'Macha Latte', 'size_oz' => 'Original', 'price' => 130.00),
-    array('id' => 9, 'user_id' => 10, 'Item_Name' => 'Macha Latte', 'size_oz' => 'Medium', 'price' => 140.00),
-    array('id' => 9, 'user_id' => 10, 'Item_Name' => 'Macha Latte', 'size_oz' => 'Large', 'price' => 150.00),
+    array('id' => 27, 'user_id' => 28, 'Item_Name' => 'Macha Latte', 'size_oz' => 'Original', 'price' => 130.00),
+    array('id' => 28, 'user_id' => 29, 'Item_Name' => 'Macha Latte', 'size_oz' => 'Medium', 'price' => 140.00),
+    array('id' => 29, 'user_id' => 30, 'Item_Name' => 'Macha Latte', 'size_oz' => 'Large', 'price' => 150.00),
 
-    array('id' => 10, 'user_id' => 11, 'Item_Name' => 'Straberry Milk', 'size_oz' => 'Original', 'price' => 120.00),
-    array('id' => 10, 'user_id' => 11, 'Item_Name' => 'Straberry Milk', 'size_oz' => 'Medium', 'price' => 130.00),
-    array('id' => 10, 'user_id' => 11, 'Item_Name' => 'Straberry Milk', 'size_oz' => 'Large', 'price' => 140.00),
+    array('id' => 30, 'user_id' => 31, 'Item_Name' => 'Straberry Milk', 'size_oz' => 'Original', 'price' => 120.00),
+    array('id' => 31, 'user_id' => 32, 'Item_Name' => 'Straberry Milk', 'size_oz' => 'Medium', 'price' => 130.00),
+    array('id' => 32, 'user_id' => 33, 'Item_Name' => 'Straberry Milk', 'size_oz' => 'Large', 'price' => 140.00),
 
-    array('id' => 11, 'user_id' => 12, 'Item_Name' => 'Lemonade', 'size_oz' => 'Original', 'price' => 120.00),
-    array('id' => 11, 'user_id' => 12, 'Item_Name' => 'Lemonade', 'size_oz' => 'Medium', 'price' => 130.00),
-    array('id' => 11, 'user_id' => 12, 'Item_Name' => 'Lemonade', 'size_oz' => 'Large', 'price' => 140.00),
+    array('id' => 33, 'user_id' => 34, 'Item_Name' => 'Lemonade', 'size_oz' => 'Original', 'price' => 120.00),
+    array('id' => 34, 'user_id' => 35, 'Item_Name' => 'Lemonade', 'size_oz' => 'Medium', 'price' => 130.00),
+    array('id' => 35, 'user_id' => 36, 'Item_Name' => 'Lemonade', 'size_oz' => 'Large', 'price' => 140.00),
 
-    array('id' => 12, 'user_id' => 13, 'Item_Name' => 'Grape Fruit Ade', 'size_oz' => 'Original', 'price' => 120.00),
-    array('id' => 12, 'user_id' => 13, 'Item_Name' => 'Grape Fruit Ade', 'size_oz' => 'Medium', 'price' => 130.00),
-    array('id' => 12, 'user_id' => 13, 'Item_Name' => 'Grape Fruit Ade', 'size_oz' => 'Large', 'price' => 140.00),
+    array('id' => 36, 'user_id' => 37, 'Item_Name' => 'Grape Fruit Ade', 'size_oz' => 'Original', 'price' => 120.00),
+    array('id' => 37, 'user_id' => 38, 'Item_Name' => 'Grape Fruit Ade', 'size_oz' => 'Medium', 'price' => 130.00),
+    array('id' => 38, 'user_id' => 39, 'Item_Name' => 'Grape Fruit Ade', 'size_oz' => 'Large', 'price' => 140.00),
 
-    array('id' => 13, 'user_id' => 14, 'Item_Name' => 'Iced Hibiscus Cooler', 'size_oz' => 'Original', 'price' => 120.00),
-    array('id' => 13, 'user_id' => 14, 'Item_Name' => 'Iced Hibiscus Cooler', 'size_oz' => 'Medium', 'price' => 130.00),
-    array('id' => 13, 'user_id' => 14, 'Item_Name' => 'Iced Hibiscus Cooler', 'size_oz' => 'Large', 'price' => 140.00),
+    array('id' => 39, 'user_id' => 40, 'Item_Name' => 'Iced Hibiscus Cooler', 'size_oz' => 'Original', 'price' => 120.00),
+    array('id' => 40, 'user_id' => 41, 'Item_Name' => 'Iced Hibiscus Cooler', 'size_oz' => 'Medium', 'price' => 130.00),
+    array('id' => 41, 'user_id' => 42, 'Item_Name' => 'Iced Hibiscus Cooler', 'size_oz' => 'Large', 'price' => 140.00),
 
-    array('id' => 14, 'user_id' => 15, 'Item_Name' => 'Iced Chai Tea Latte', 'size_oz' => 'Original', 'price' => 120.00),
-    array('id' => 14, 'user_id' => 15, 'Item_Name' => 'Iced Chai Tea Latte', 'size_oz' => 'Medium', 'price' => 130.00),
-    array('id' => 14, 'user_id' => 15, 'Item_Name' => 'Iced Chai Tea Latte', 'size_oz' => 'Large', 'price' => 140.00)
+    array('id' => 42, 'user_id' => 43, 'Item_Name' => 'Iced Chai Tea Latte', 'size_oz' => 'Original', 'price' => 120.00),
+    array('id' => 43, 'user_id' => 44, 'Item_Name' => 'Iced Chai Tea Latte', 'size_oz' => 'Medium', 'price' => 130.00),
+    array('id' => 44, 'user_id' => 45, 'Item_Name' => 'Iced Chai Tea Latte', 'size_oz' => 'Large', 'price' => 140.00)
 );
 
 // 2nd shit pinaka ano to cart//
@@ -136,7 +137,6 @@ if (isset($_POST['checkout'])) {
 
     $_SESSION['cart'] = array();
 }
-    //ayusin ko pa lagyan pic, font, n other shit//
 ?>
 
 <!DOCTYPE html>
