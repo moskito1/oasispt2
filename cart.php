@@ -121,7 +121,7 @@ if (isset($_POST['checkout'])) {
         $price = $item['price'];
         $quantity = $item['quantity'];
 
-        $sql = "INSERT INTO jordan (id, Item_Name, size_oz, price, quantity) VALUES ($user_id, '$name', '$size', $price, $quantity)";
+        $sql = "INSERT INTO record (id, Item_Name, size_oz, price, quantity) VALUES ($user_id, '$name', '$size', $price, $quantity)";
 
         if ($conn->query($sql) !== TRUE) {
             echo "Error inserting item: " . $conn->error;
@@ -129,14 +129,14 @@ if (isset($_POST['checkout'])) {
     }
 
     //para sa total//
-    $sql = "INSERT INTO jordan (Item_Name, total_price) VALUES ('Total', $total_price)";
+    $sql = "INSERT INTO record (Item_Name, total_price) VALUES ('Total', $total_price)";
     if ($conn->query($sql) !== TRUE) {
         echo "Error inserting total price: " . $conn->error;
     }
 
     $_SESSION['cart'] = array();
 }
-    //AYUSIN KO PA TO LAGAY PIC N SHIT, FONTSHIT, AND OTHER SHIT//
+    //ayusin ko pa lagyan pic, font, n other shit//
 ?>
 
 <!DOCTYPE html>
