@@ -35,11 +35,13 @@ unset($_SESSION["errormsg"]);
             <input type="password" id="customer-password"  name="password" required>
             <label for="">Password</label>
           </div>
-          <?php
-            if (isset($errormsg)) {
-                echo '<p class="error-message">' . $errormsg . '</p>';
-            }
-          ?>
+          <?php if (isset($errormsg)) { ?>
+            <div class="errordiv">
+             <p class="error-message"> <?php echo $errormsg; ?> </p>
+
+            </div>
+          <?php  } ?>
+          
           <div class="forgot-password">
             <a href="">Forgot password?</a>
           </div>

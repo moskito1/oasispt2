@@ -323,6 +323,12 @@
   margin-top: 50px;
   visibility: hidden;
 }
+
+.errordiv .error-message {
+  color: #df3434;
+  margin-top: -30px;
+  margin-bottom: 10px;
+}
 /* login / signup end */
 
 /* menu start */
