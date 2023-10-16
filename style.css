@@ -398,3 +398,8 @@
 .product-name {
   font-weight: bold;
 }
+
+.product-link {
+  text-decoration: none;
+  color: black;
+}

@@ -1,3 +1,12 @@
+<?php
+session_start(); 
+include "dbconnection.php";
+
+$errormsg = isset($_SESSION["errormsg"]) ? $_SESSION["errormsg"] : ''; // Get the error message from the session, if it exists
+unset($_SESSION["errormsg"]); 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +35,11 @@
             <input type="password" id="customer-password"  name="password" required>
             <label for="">Password</label>
           </div>
+          <?php
+            if (isset($errormsg)) {
+                echo '<p class="error-message">' . $errormsg . '</p>';
+            }
+          ?>
           <div class="forgot-password">
             <a href="">Forgot password?</a>
           </div>
