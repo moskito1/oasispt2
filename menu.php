@@ -53,7 +53,7 @@ mysqli_close($conn);
       <?php
         
         foreach ($data as $row) {
-            echo '<a href="menu.php?page=product&id=' . $row['prodid'] . '" class="product-link">';
+            echo '<a href="products.php?id=' . $row['prodid'] . '" class="product-link">';
             echo '<div class="product-card">';
             echo '<img src="' . $row['img'] .  '" class="product-img">';
             echo '<p class="product-name">' . $row['prodname'] . '</p>';
