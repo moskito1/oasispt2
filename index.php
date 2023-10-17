@@ -33,7 +33,7 @@ if (isset($_GET["logout"])) {
         senses with a cup of meticulously brewed aromatic coffee.</p>
       </div>
       <div class="button-div">
-        <button>ORDER HERE</button>
+        <a href="menu.php"><button>ORDER HERE</button></a>
       </div>
       </div>
       
