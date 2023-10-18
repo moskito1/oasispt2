@@ -55,8 +55,8 @@ mysqli_close($conn);
         foreach ($data as $row) {
             echo '<a href="products.php?id=' . $row['prodid'] . '" class="product-link">';
             echo '<div class="product-card">';
-            echo '<img src="' . $row['img'] .  '" class="product-img">';
-            echo '<p class="product-name">' . $row['prodname'] . '</p>';
+            echo '<img src="' . $row['img'] .  '" class="menu-img">';
+            echo '<p class="menu-name">' . $row['prodname'] . '</p>';
             echo '<p>From ₱' . $row['tallprice'] . '</p>';
             echo '</div>';
             echo '</a>';

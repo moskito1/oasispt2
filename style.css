@@ -403,12 +403,12 @@
   -moz-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.33);
 }
 
-.product-img {
+.menu-img {
   width: 240px;
   object-fit: cover;
 }
 
-.product-name {
+.menu-name {
   font-weight: bold;
 }
 
@@ -422,4 +422,8 @@
   -webkit-box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
   top: 20px;
+}
+
+.product-page {
+  display: flex;
 }
