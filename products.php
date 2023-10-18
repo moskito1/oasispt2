@@ -19,6 +19,7 @@ if (isset($_GET['id'])) {
         <?php include "header.php";?>
 
         <section class="product-page">
+          <div class="product-container">
           <div class="left-product">
             <div class="product-image">
               <img src="<?php echo $product['img']; ?>" alt="">
@@ -55,6 +56,8 @@ if (isset($_GET['id'])) {
               <button>Buy Now</button>
             </div>
           </div>
+          </div>
+        
 
         </section>
 
