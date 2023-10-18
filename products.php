@@ -19,6 +19,7 @@ if (isset($_GET['id'])) {
         <?php include "header.php";?>
 
         <section class="product-page">
+<<<<<<< HEAD
           <div class="product-container">
           <div class="left-product">
             <div class="product-image">
@@ -57,8 +58,6 @@ if (isset($_GET['id'])) {
             </div>
           </div>
           </div>
-        
-
         </section>
 
       </body>
