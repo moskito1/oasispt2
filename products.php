@@ -20,6 +20,30 @@ if (isset($_GET['id'])) {
       <body>
         <?php include "header.php";?>
 
+        <section class="product-page">
+          <div class="product-div">
+            <div class="product-picture">
+              <img src="<?php echo $product['img']; ?>" alt="">
+            </div>
+            <div class="product-info">
+              <div class="product-name">
+                <h1><?php echo $product['prodname']; ?></h1>
+              </div>
+              <div class="product-size">
+                <p>Sizes:</p>
+                <div class="sizes-button">
+                  <button>Tall</button>
+                  <button>Grande</button>
+                  <button>Venti</button>
+                </div>
+              </div>
+              <div class="product-button">
+                  <button>Add to Cart</button>
+                  <button>Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </section>
         
       </body>
     </html>
