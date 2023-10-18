@@ -57,7 +57,7 @@ mysqli_close($conn);
             echo '<div class="product-card">';
             echo '<img src="' . $row['img'] .  '" class="product-img">';
             echo '<p class="product-name">' . $row['prodname'] . '</p>';
-            echo '<p>Price: ₱' . $row['price'] . '</p>';
+            echo '<p>From ₱' . $row['tallprice'] . '</p>';
             echo '</div>';
             echo '</a>';
         }
