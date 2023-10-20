@@ -15,11 +15,13 @@ if (isset($_GET['id'])) {
 
     if ($product = mysqli_fetch_assoc($result)){ ?>
      <html>
+      <head>
+        <title>Oasis Cafe</title>
+      </head>
       <body>
         <?php include "header.php";?>
 
         <section class="product-page">
-<<<<<<< HEAD
           <div class="product-container">
           <div class="left-product">
             <div class="product-image">
@@ -34,14 +36,14 @@ if (isset($_GET['id'])) {
               <h1><?php echo $product['prodname']; ?></h1>
             </div>
             <div class="product-price">
-              <p>₱ <?php echo $product['tallprice']; ?></p>
+              <span class="display-price">₱ <?php echo number_format($product['tallprice'], 2); ?></span>
             </div>
             <div class="product-size">
               <p>Sizes:</p>
               <div class="size-button">
-                <button>Tall</button>
-                <button>Grande</button>
-                <button>Venti</button>
+                <button onClick="updatePrice(this, 'tall', <?php echo $product['tallprice'];?>)">Tall</button>
+                <button onClick="updatePrice(this,'grande', <?php echo $product['grandeprice'];?>)">Grande</button>
+                <button onClick="updatePrice(this,'venti', <?php echo $product['ventiprice'];?>)">Venti</button>
               </div>
             </div>
             <div class="product-quantity">
@@ -63,6 +65,8 @@ if (isset($_GET['id'])) {
       </body>
 
       <script>
+                let activeButton = null;
+
         function increaseCount(a, b) {
           var input = b.previousElementSibling;
           var value = parseInt(input.value, 10);
@@ -80,6 +84,25 @@ if (isset($_GET['id'])) {
             input.value = value;
           }
         }
+
+
+        function updatePrice(button, size, price) {
+        var displayPrice = document.querySelector('.display-price');
+
+          price = parseFloat(price);
+
+          if (!isNaN(price)) {
+              displayPrice.innerHTML = '₱ ' + price.toFixed(2);
+
+              if (activeButton) {
+                  activeButton.classList.remove('active');
+              }
+
+              button.classList.add('active');
+              activeButton = button;
+          }
+      }
+        
       </script>
     </html>
    <?php } else { ?>
