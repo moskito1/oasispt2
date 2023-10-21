@@ -338,6 +338,13 @@
   top: 0;
 }
 
+.menu-banner {
+}
+
+.menu-banner img {
+  height: 480px;
+}
+
 .menu-title {
   display: flex;
   align-items: center;

@@ -38,6 +38,9 @@ mysqli_close($conn);
     <?php include "header.php"; ?>
 </section>
 <section class="menu-body">
+    <div class="menu-banner">
+        <img src="imgs/Menu/menu-banner.png" alt="">
+    </div>
     <div class="menu-title">
         <h1>MENU</h1>
     </div>
