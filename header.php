@@ -17,7 +17,7 @@ include "dbconnection.php";
         <a href="aboutus.php">ABOUT US</a>
     </div> 
     <div class="right-nav-bar">
-        <a href=""><i class="fa fa-shopping-cart"></i></a>
+        <a href="cart.php"><i class="fa fa-shopping-cart"></i></a>
         <?php if (isset($_SESSION["username"])) {
             include "get_user_info.php";
             echo '<img src="' . $userProfilePicture . '" alt="User Profile Picture" class="userpicture">';

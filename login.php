@@ -2,7 +2,7 @@
 session_start(); 
 include "dbconnection.php";
 
-$errormsg = isset($_SESSION["errormsg"]) ? $_SESSION["errormsg"] : ''; // Get the error message from the session, if it exists
+$errormsg = isset($_SESSION["errormsg"]) ? $_SESSION["errormsg"] : ''; 
 unset($_SESSION["errormsg"]); 
 
 ?>
