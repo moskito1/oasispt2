@@ -55,17 +55,23 @@ if (isset($_GET['id'])) {
               </div>
             </div>
             <div class="cart-buy-button">
-              <button>Add to Cart</button>
-              <button>Buy Now</button>
+            <form method="post" action="add_to_cart.php">
+              <!-- Hidden input fields to store product information -->
+              <input type="hidden" name="product_id" value="<?php echo $product['prodid']; ?>"> 
+              <input type="hidden" name="product_name" value="<?php echo $product['prodname']; ?>"> 
+              <input type="hidden" name="product_img" value="<?php echo $product['img']; ?>">
+              <input type="hidden" name="product_price" id="selected_size" value="<?php echo $product['tallprice']; ?>">
+
+              <!-- Add to Cart button -->
+              <input type="submit" name="cart" value="Add to Cart"></input>
+            </form>
             </div>
           </div>
           </div>
         </section>
-
       </body>
-
       <script>
-                let activeButton = null;
+        let activeButton = null;
 
         function increaseCount(a, b) {
           var input = b.previousElementSibling;
@@ -85,31 +91,23 @@ if (isset($_GET['id'])) {
           }
         }
 
-
         function updatePrice(button, size, price) {
-        var displayPrice = document.querySelector('.display-price');
-
+          var displayPrice = document.querySelector('.display-price');
+          var selectedSizeInput = document.getElementById('selected_size');
           price = parseFloat(price);
-
           if (!isNaN(price)) {
-              displayPrice.innerHTML = '₱ ' + price.toFixed(2);
-
-              if (activeButton) {
-                  activeButton.classList.remove('active');
-              }
-
-              button.classList.add('active');
-              activeButton = button;
+            displayPrice.innerHTML = '₱ ' + price.toFixed(2);
+            selectedSizeInput.value = size;
+            if (activeButton) {
+              activeButton.classList.remove('active');
+            }
+            button.classList.add('active');
+            activeButton = button;
           }
-      }
-        
+        }
       </script>
     </html>
-   <?php } else { ?>
-
-<?php  }
-    mysqli_stmt_close($stmt);
-  }
-}
+   <?php } // Remove the closing curly brace from here
+  } // Remove the closing curly brace from here
+} // Remove the closing curly brace from here
 ?>
-
