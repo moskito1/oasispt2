@@ -58,7 +58,6 @@ include "dbconnection.php";
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Get elements by class name, so use getElementsByClassName
         let userProfileToggle = document.querySelector(".userpicture");
         let userProfileDropdown = document.querySelector(".user-profile-dropdown");
 

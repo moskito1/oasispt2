@@ -16,6 +16,9 @@
   height: 7.7vh;
   position: sticky;
   background-color: white;
+  box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.58);
+  -webkit-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.58);
+  -moz-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.58);
 }
 
 .left-nav-bar img {
@@ -123,7 +126,7 @@
 
 /* index body content start */
 .body {
-  background-image: url(imgs/LandingPgBackGOasisCafe.svg);
+  background-image: url(imgs/landingpage.png);
   background-size: cover;
   background-repeat: no-repeat;
   height: 92.3vh;
@@ -176,13 +179,14 @@
 .button-div button:hover {
   background: white;
   color: black;
+  transition: 0.2s;
 }
 
 /* login / signup page start */
 
 .login,
 .signup {
-  background-image: url(imgs/OasisCafe_20230917_141758_0000.svg);
+  background-image: url(imgs/login-signup.png);
   background-position: center;
   height: 92.3vh;
   display: flex;
@@ -338,11 +342,10 @@
   top: 0;
 }
 
-.menu-banner {
-}
-
 .menu-banner img {
-  height: 480px;
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .menu-title {
@@ -429,7 +432,7 @@
   -webkit-box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
   top: 20px;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 .product-page {
@@ -539,4 +542,190 @@
   color: black;
   border: 1px solid black;
   cursor: pointer;
+}
+
+/* about us */
+.aboutus-body {
+  background-color: #c6def1;
+}
+.about-head {
+  text-align: center;
+}
+
+.story p {
+  text-align: center;
+  font-size: 1.7em;
+  width: 75%;
+  font-family: "Times New Roman";
+}
+
+.aboutus-first {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  height: 350px;
+}
+.about-us-logo img {
+  width: 300px;
+  height: 290px;
+  object-fit: contain;
+}
+
+.mission-img img {
+  width: 350px;
+  height: 290px;
+  object-fit: contain;
+}
+.mission-head h1 {
+  text-align: center;
+}
+
+.mission-first {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.mission-first p {
+  font-size: 1.7em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 50px;
+  font-family: "Times New Roman";
+}
+
+.vision-first {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.vision-first p {
+  font-size: 1.7em;
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+  font-family: "Times New Roman";
+}
+
+.footer {
+  height: 200px;
+  background-color: #faedcb;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.first-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-column-child {
+  display: flex;
+  flex-direction: row;
+}
+
+.first-column img {
+  height: 20px;
+  width: 20px;
+  margin-right: 13px;
+  margin-top: 7px;
+}
+
+.second-column img {
+  height: 30px;
+  width: 30px;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 10px 10px 10px 10px;
+}
+
+.second-column-child {
+  margin-top: 20px;
+}
+
+.footer p {
+  line-height: 30px;
+}
+
+.footer p {
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+}
+
+.footer h4 {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+
+/* cart */
+
+.cart,
+.cart-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cart-title h1 {
+  margin-top: 40px;
+  font-size: 2.5em;
+  font-weight: 500;
+  margin-top: 60px;
+  margin-bottom: 25px;
+  letter-spacing: 0.2em;
+}
+
+.empty-cart-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 92.3vh;
+}
+
+.carttitle-container {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  border-bottom: 1px solid black;
+}
+
+.cart-column {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+}
+.product-detail {
+  width: 250px;
+  align-items: self-start;
+}
+
+.cart-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.cart-items {
+  display: flex;
+  gap: 10px;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  border-bottom: 1px solid black;
+  margin-top: 10px;
+  padding-bottom: 15px;
 }

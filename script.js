@@ -66,3 +66,39 @@ function setErrorMsg(input, errormsg) {
   formField.className = errormsg ? "form-field error" : "form-field";
   small.innerText = errormsg;
 }
+
+function decreaseCount(event, inputElement) {
+  var input = inputElement.nextElementSibling;
+  var value = parseInt(input.value, 10);
+  if (value > 1) {
+    value = isNaN(value) ? 0 : value;
+    value--;
+    input.value = value;
+  }
+}
+
+function increaseCount(event, inputElement) {
+  var input = inputElement.previousElementSibling;
+  var value = parseInt(input.value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  input.value = value;
+}
+let activeButton = null;
+
+function updatePrice(button, size, price) {
+  var displayPrice = document.querySelector(".display-price");
+  var selectedSizeInput = document.getElementById("selected_size");
+  var selectedPriceInput = document.getElementById("selected_price");
+  price = parseFloat(price);
+  if (!isNaN(price)) {
+    displayPrice.innerHTML = "₱ " + price.toFixed(2);
+    selectedSizeInput.value = size;
+    selectedPriceInput.value = price;
+    if (activeButton) {
+      activeButton.classList.remove("active");
+    }
+    button.classList.add("active");
+    activeButton = button;
+  }
+}

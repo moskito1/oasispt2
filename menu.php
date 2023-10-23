@@ -5,9 +5,16 @@ include('dbconnection.php');
 $category = isset($_GET['category']) ? $_GET['category'] : "ALL";
 
 if ($category === "ALL") {
-    $query = "SELECT * FROM products";
+    $query = "SELECT p.prodid, p.prodname, p.img, ps.size_name, ps.price
+              FROM products p
+              INNER JOIN product_sizes ps ON p.prodid = ps.prodid
+              WHERE ps.size_name = 'Tall'";
 } else {
-    $query = "SELECT * FROM products WHERE category = ?";
+    $query = "SELECT p.prodid, p.prodname, p.img, ps.size_name, ps.price
+              FROM products p
+              INNER JOIN product_sizes ps ON p.prodid = ps.prodid
+              WHERE p.category = ?
+              AND ps.size_name = 'Tall'";
 }
 
 $stmt = mysqli_prepare($conn, $query);
@@ -39,7 +46,7 @@ mysqli_close($conn);
 </section>
 <section class="menu-body">
     <div class="menu-banner">
-        <img src="imgs/Menu/menu-banner.png" alt="">
+        <img src="imgs/menu-banner.png" alt="">
     </div>
     <div class="menu-title">
         <h1>MENU</h1>
@@ -47,26 +54,24 @@ mysqli_close($conn);
     <div class="category-list">
         <div class="category-button">
             <a href="?category=ALL" class="menu-category <?php if ($category === "ALL") echo "active"; ?>">ALL</a>
-            <a href="?category=ESPRESSO" class="menu-category <?php if ($category === "ESPRESSO") echo "active"; ?>">ESPRESSO</a>
-            <a href="?category=NON%20ESPRESSO" class="menu-category <?php if ($category === "NON ESPRESSO") echo "active"; ?>">NON ESPRESSO</a>
+            <a href="?category=Espresso" class="menu-category <?php if ($category === "Espresso") echo "active"; ?>">ESPRESSO</a>
+            <a href="?category=Non%20Espresso" class="menu-category <?php if ($category === "Non Espresso") echo "active"; ?>">NON ESPRESSO</a>
         </div>
     </div>
     <div class="menu-card">
-      <div class="product-row">
-      <?php
-        
-        foreach ($data as $row) {
-            echo '<a href="products.php?id=' . $row['prodid'] . '" class="product-link">';
-            echo '<div class="product-card">';
-            echo '<img src="' . $row['img'] .  '" class="menu-img">';
-            echo '<p class="menu-name">' . $row['prodname'] . '</p>';
-            echo '<p>From ₱' . $row['tallprice'] . '</p>';
-            echo '</div>';
-            echo '</a>';
-        }
-        ?>
-      </div>
-       
+        <div class="product-row">
+            <?php
+            foreach ($data as $row) {
+                echo '<a href="products.php?id=' . $row['prodid'] . '" class="product-link">';
+                echo '<div class="product-card">';
+                echo '<img src="' . $row['img'] . '" class="menu-img">';
+                echo '<p class="menu-name">' . $row['prodname'] . '</p>';
+                echo '<p>From ₱' . $row['price'] . '</p>';
+                echo '</div>';
+                echo '</a>';
+            }
+            ?>
+        </div>
     </div>
 </section>
 </body>
