@@ -65,76 +65,74 @@
                                     <?php } ?>
                                 </div>
                             </div>
-                            <div class="product-quantity">
-                                <p>Quantity:</p>
-                                <div class="quantity-counter">
-                                    <span class="decrease" onClick='decreaseCount(event, this)'>-</span>
-                                    <input type="text" value="1" name="quantity" id="quantity">
-                                    <span class="increase" onClick='increaseCount(event, this)'>+</span>
-                                </div>
-                            </div>
-                            <div class="cart-buy-button">
+                            
+                            
                                 <form method="post" action="add_to_cart.php">
+                                    <div class="product-quantity">
+                                        <p>Quantity:</p>
+                                         <div class="quantity-counter">
+                                            <span class="decrease" onClick='decreaseCount(event, this)'>-</span>
+                                             <input type="text" name="quantity" id="quantity"  value="1">
+                                           <span class="increase" onClick='increaseCount(event, this)'>+</span>
+                                         </div>
+                                     </div>
                                     <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
                                     <input type="hidden" name="product_name" value="<?php echo $product['prodname']; ?>">
                                     <input type="hidden" name="product_img" value="<?php echo $product['img']; ?>">
-                                    <input type="hidden" value="1" name="quantity" id="quantity">
                                     <input type="hidden" name="product_size" id="selected_size" value="<?php echo $active_size; ?>">
                                     <input type="hidden" name="product_price" id="selected_price" value="<?php echo $active_price; ?>">
-                                    <input type="submit" name="cart" value="Add to Cart"></input>
+                                    <div class="cart-buy-button">
+                                        <input type="submit" name="cart" value="Add to Cart"></input>
+                                    </div>
                                 </form>
-                            </div>
+                            
                         </div>
                     </div>
-                </section>
+                </section> 
                 </body>
                 <script>
 
                     let activeButton = null;
 
                     function increaseCount(a, b) {
-                        var input = b.previousElementSibling;
-                        var value = parseInt(input.value, 10);
-                        value = isNaN(value) ? 0 : value;
-                        value++;
-                        input.value = value;
+    var input = b.previousElementSibling;
+    var value = parseInt(input.value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    input.value = value;
+}
 
-                        document.getElementById('quantity').value = value;
+function decreaseCount(a, b) {
+    var input = b.nextElementSibling;
+    var value = parseInt(input.value, 10);
+    if (value > 1) {
+        value = isNaN(value) ? 0 : value;
+        value--;
+        input.value = value;
+    }
+}
 
-                    }
+function updatePrice(button, size, price) {
+    var displayPrice = document.querySelector('.display-price');
+    var selectedSizeInput = document.getElementById('selected_size');
+    var selectedPriceInput = document.getElementById('selected_price');
+    var quantityInput = document.getElementById('quantity'); 
+    price = parseFloat(price);
+    if (!isNaN(price)) {
+        displayPrice.innerHTML = '₱ ' + price.toFixed(2);
+        selectedSizeInput.value = size;
+        selectedPriceInput.value = price;
+        quantityInput.value = 1; 
+        
+        var buttons = document.querySelectorAll('.size-button button');
+        buttons.forEach(function(btn) {
+            btn.classList.remove('active');
+        });
 
-                    function decreaseCount(a, b) {
-                        var input = b.nextElementSibling;
-                        var value = parseInt(input.value, 10);
-                        if (value > 1) {
-                            value = isNaN(value) ? 0 : value;
-                            value--;
-                            input.value = value;
+        button.classList.add('active');
+    }
+}
 
-                            document.getElementById('quantity').value = value;
-
-                        }
-                    }
-                    function updatePrice(button, size, price) {
-                    var displayPrice = document.querySelector('.display-price');
-                    var selectedSizeInput = document.getElementById('selected_size');
-                    var selectedPriceInput = document.getElementById('selected_price');
-                    price = parseFloat(price);
-                    if (!isNaN(price)) {
-                        displayPrice.innerHTML = '₱ ' + price.toFixed(2);
-                        selectedSizeInput.value = size;
-                        selectedPriceInput.value = price;
-                        
-                        // Remove the "active" class from all buttons
-                        var buttons = document.querySelectorAll('.size-button button');
-                        buttons.forEach(function(btn) {
-                            btn.classList.remove('active');
-                        });
-                        
-                        // Add the "active" class to the newly clicked button
-                        button.classList.add('active');
-                    }
-                }
 
                 </script>
                 </html>
