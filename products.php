@@ -1,4 +1,4 @@
-    <?php
+<?php
     session_start();
     include('dbconnection.php');
 
@@ -98,6 +98,9 @@
                         value = isNaN(value) ? 0 : value;
                         value++;
                         input.value = value;
+
+                        document.getElementById('quantity').value = value;
+
                     }
 
                     function decreaseCount(a, b) {
@@ -107,6 +110,9 @@
                             value = isNaN(value) ? 0 : value;
                             value--;
                             input.value = value;
+
+                            document.getElementById('quantity').value = value;
+
                         }
                     }
                     function updatePrice(button, size, price) {

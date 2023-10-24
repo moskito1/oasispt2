@@ -56,6 +56,9 @@ mysqli_close($conn);
                 <div class="cart-column">
                     <p>TOTAL</p>
                 </div>
+                <div class="cart-column">
+
+                </div>
             </div>
             </section>
   <div class="cart-items">
@@ -65,7 +68,7 @@ mysqli_close($conn);
             ?>
              <div class="cart-container">
                 <div class="cart-column product-detail">
-                    <img src="<?php echo $row['img']; ?>" class="cart-img">
+                    <img src="<?php echo $row['img']; ?>" class="cart-img"> 
                     <h3><?php echo $row['prodname']; ?></h3>
                 </div>
                 <div class="cart-column">
@@ -80,12 +83,18 @@ mysqli_close($conn);
                 <div class="cart-column">
                     <p>₱<?php echo number_format($row['price'] * $row['quantity'], 2); ?></p>
                 </div>
+                <div class="cart-column">
+                    <form action="cart_delete.php" method="post">
+                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                        <input type="submit" name="delete" value="DELETE"> 
+                    </form>
+                </div>
             </div>
 
             <?php
         }
     } else {
-      echo "<p>Your cart is empty.</p>";
+      echo '<p class="empty-cart-content">Your cart is empty.</p>';
     }
     ?>
   </div>

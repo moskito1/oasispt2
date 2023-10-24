@@ -695,6 +695,7 @@
   flex-direction: row;
   gap: 100px;
   border-bottom: 1px solid black;
+  margin-bottom: 10px;
 }
 
 .cart-column {
@@ -707,7 +708,8 @@
 }
 .product-detail {
   width: 250px;
-  align-items: self-start;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .cart-img {
