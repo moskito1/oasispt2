@@ -26,7 +26,6 @@ CREATE TABLE product_sizes (
 );
 
 
-
 CREATE TABLE cart (
   username varchar(30),
   FOREIGN KEY (username) REFERENCES userInfo(username),

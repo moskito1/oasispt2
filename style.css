@@ -731,3 +731,12 @@
   margin-top: 10px;
   padding-bottom: 15px;
 }
+
+#delete-cart {
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+}

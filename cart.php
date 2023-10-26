@@ -86,7 +86,7 @@ mysqli_close($conn);
                 <div class="cart-column">
                     <form action="cart_delete.php" method="post">
                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                        <input type="submit" name="delete" value="DELETE"> 
+                        <input type="submit" name="delete" value="DELETE" id="delete-cart"> 
                     </form>
                 </div>
             </div>
