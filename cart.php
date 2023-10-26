@@ -36,6 +36,7 @@ mysqli_close($conn);
 </head>
 <body>
   <?php include "header.php"; ?>
+  <div class="cart-main">
   <section class="cart">
             <div class="cart-title">
                 <h1>MY CART</h1>
@@ -60,7 +61,6 @@ mysqli_close($conn);
 
                 </div>
             </div>
-            </section>
   <div class="cart-items">
     <?php
     if (count($data) > 0) {
@@ -98,5 +98,11 @@ mysqli_close($conn);
     }
     ?>
   </div>
+  </section>
+  </div>
+  
+  <?php include "footer.php"; ?>
+
+
 </body>
 </html>

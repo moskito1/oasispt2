@@ -6,6 +6,7 @@
 </head>
 <body>
 <div class="footer">
+  <div class="footer-container">
   <div class="first-column">
     <h4>FOR MORE INQUIRIES</h4>
     <div class="first-column-child">
@@ -25,7 +26,7 @@
   </div>
   <div class="second-column">
     <h4>FOLLOW US</h4>
-    <p>Find us on our <br>social media accounts!</p>
+    <p>Find us on our social media accounts!</p>
     <div class="second-column-child">
       <a href="https://www.facebook.com/profile.php?id=100092202248783&mibextid=ZbWKwL"><i class="fa fa-brands fa-facebook"></i></a>
       <a href="https://instagram.com/oasiscafe647?igshid=ZGUzMzM3NWJiOQ=="><i class="fa fa-brands fa-instagram"></i></a>
@@ -42,6 +43,7 @@
     <p>8:00 AM TO 1:00 AM</p>
   </div>
 </div> 
+ 
 </div>
 </body>
 </html>

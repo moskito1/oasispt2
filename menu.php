@@ -74,5 +74,6 @@ mysqli_close($conn);
         </div>
     </div>
 </section>
+<?php include "footer.php" ?>
 </body>
 </html>

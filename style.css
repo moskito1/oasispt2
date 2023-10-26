@@ -621,7 +621,12 @@
   margin-top: 100px;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
+}
+.footer-container {
+  display: flex;
+  gap: 250px;
+  margin-top: 25px;
 }
 .first-column {
   display: flex;
@@ -663,6 +668,12 @@
 }
 
 /* cart */
+.cart-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 200px);
+}
 
 .cart,
 .cart-items {
