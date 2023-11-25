@@ -25,12 +25,12 @@ session_start();
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque beatae quos repudiandae delectus, id eaque adipisci optio magni fugit veritatis quaerat, accusantium voluptatem quam voluptatibus nulla ut! Voluptatum, voluptatem eius!</p>
         </div>
         <div class="img-info">
-          <img src="imgs\Menu\1.jpg" alt="">
+          <img src="imgs\Menu\1.jpg" alt=""class="landscape">
         </div>
       </div>
       <div class="info">
         <div class="img-info">
-        <img src="imgs\Menu\1.jpg" alt="">
+        <img src="imgs\Menu\1.jpg" alt=""class="landscape">
         </div>
         <div class="text-info">
           <h2>BEHIND THE NAME 'OASIS'</h2>
@@ -43,8 +43,12 @@ session_start();
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque beatae quos repudiandae delectus, id eaque adipisci optio magni fugit veritatis quaerat, accusantium voluptatem quam voluptatibus nulla ut! Voluptatum, voluptatem eius!</p>
         </div>
         <div class="img-info">
-          <img src="imgs\Menu\1.jpg" alt="">
+          <img src="imgs\Menu\1.jpg" alt="" class="landscape">
+          <img src="imgs\Menu\1.jpg" alt="" class="portrait">
         </div>
+      </div>
+      <div class="qoute-container">
+        <p>"Let our coffee warm your soul"</p>
       </div>
     </div>
     
