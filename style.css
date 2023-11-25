@@ -208,7 +208,7 @@
 
 .signup-container {
   width: 400px;
-  height: 620px;
+  height: 640px;
 }
 
 .title {
@@ -224,6 +224,10 @@
   margin: -10px 0 10px 0;
 }
 
+.signup .title h2 {
+  margin: 0 0 -20px;
+}
+
 .form-field {
   position: relative;
   margin: 30px 0;
@@ -232,9 +236,10 @@
 
 .signup .form-field {
   position: relative;
-  margin: 30px 0;
+  margin: 35px 0;
   width: 310px;
 }
+
 .form-field label {
   position: absolute;
   top: 1px;
@@ -263,17 +268,6 @@
   color: white;
   font-size: 1.2em;
   top: 20px;
-}
-
-.form-control.error small {
-  visibility: visible;
-}
-
-.form-control small {
-  color: #df3434;
-  position: absolute;
-  left: 0;
-  visibility: hidden;
 }
 
 .forgot-password {
@@ -325,14 +319,11 @@
   position: absolute;
   left: 0;
   margin-top: 50px;
+  margin-bottom: 15px;
   visibility: hidden;
+  font-size: 0.75em;
 }
 
-.errordiv .error-message {
-  color: #df3434;
-  margin-top: -30px;
-  margin-bottom: 10px;
-}
 /* login / signup end */
 
 /* menu start */
@@ -354,7 +345,8 @@
   justify-content: center;
 }
 
-.menu-title h1 {
+.menu-title h1,
+.about-head h1 {
   font-size: 2.5em;
   font-weight: 500;
   margin-top: 60px;
@@ -496,7 +488,8 @@
 }
 
 .size-button button.active {
-  background-color: purple;
+  background-color: black;
+  color: white;
 }
 
 .quantity-counter {
@@ -538,81 +531,59 @@
   padding: 10px 0;
   width: 400px;
   text-align: center;
-  background-color: none;
+  background-color: white;
   color: black;
   border: 1px solid black;
   cursor: pointer;
 }
+.cart-buy-button input:hover {
+  background-color: black;
+  color: white;
+  transition: 0.2s;
+}
 
 /* about us */
-.aboutus-body {
-  background-color: #c6def1;
-}
+
 .about-head {
   text-align: center;
 }
 
-.story p {
-  text-align: center;
-  font-size: 1.7em;
-  width: 75%;
-  font-family: "Times New Roman";
+.about-container {
 }
 
-.aboutus-first {
+.info {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
-  width: 100%;
+  gap: 300px;
+  margin-top: 80px;
+}
+
+.text-info {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   gap: 30px;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  height: 350px;
-}
-.about-us-logo img {
-  width: 300px;
-  height: 290px;
-  object-fit: contain;
 }
 
-.mission-img img {
-  width: 350px;
-  height: 290px;
-  object-fit: contain;
-}
-.mission-head h1 {
+.text-info h2 {
   text-align: center;
+  font-weight: 500;
+  font-size: 1.8em;
 }
 
-.mission-first {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+.text-info p {
+  width: 600px;
+  text-align: justify;
 }
 
-.mission-first p {
-  font-size: 1.7em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-left: 50px;
-  font-family: "Times New Roman";
-}
-
-.vision-first {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.vision-first p {
-  font-size: 1.7em;
-  display: flex;
-  flex-direction: column;
-  margin-right: 50px;
-  font-family: "Times New Roman";
+.img-info img {
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
 }
 
 .footer {

@@ -41,8 +41,7 @@
                                 <img src="<?php echo $product['img']; ?>" alt="">
                             </div>
                             <div class="product-description">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias voluptate debitis accusantium illum
-                                    aut nesciunt</p>
+                                <p></p>
                             </div>
                         </div>
                         <div class="right-product">

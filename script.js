@@ -35,7 +35,7 @@ function Validate(formElement) {
 
   // username validation
   if (!usernameVal.match(/^[A-Za-z0-9\s]+$/)) {
-    setErrorMsg(username, "Username should only contain letters and numbers");
+    setErrorMsg(username, "Username should not contain special characters");
     return false;
   } else {
     setErrorMsg(username, "");

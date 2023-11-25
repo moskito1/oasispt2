@@ -18,7 +18,7 @@
       <div class="title">
       <h2>SIGN UP</h2>
       </div>
-        <form action="signup_formprocess.php" method="POST" id="signupform">
+        <form action="signup_formprocess.php" method="POST" id="signupform" autocomplete="off">
         <div class="form-field">
             <input type="text" name="firstname" id="firstname" required>
             <label for="firstname">First Name</label>

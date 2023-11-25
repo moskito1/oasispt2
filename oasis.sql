@@ -57,14 +57,14 @@ VALUES ('Iced Americano', 'imgs/Menu/16.jpg', 'Espresso'),
 ('Strawberry Milk', 'imgs/Menu/5.jpg', 'Non Espresso');
 
 INSERT INTO product_sizes (prodid, size_name, price)
-VALUES (1, 'Tall', 90.00),
-(1, 'Grande', 110.00),
-(1, 'Venti', 140.00);
+VALUES (1, 'Tall', 80.00),
+(1, 'Grande', 100.00),
+(1, 'Venti', 120.00);
 
 INSERT INTO product_sizes (prodid, size_name, price)
-VALUES (2, 'Tall', 70.00),
-(2, 'Grande', 90.00),
-(2, 'Venti', 110.00);
+VALUES (2, 'Tall', 90.00),
+(2, 'Grande', 110.00),
+(2, 'Venti', 130.00);
 
 INSERT INTO product_sizes (prodid, size_name, price)
 VALUES (3, 'Tall', 100.00),

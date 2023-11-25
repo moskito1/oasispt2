@@ -36,7 +36,7 @@
   </div>
 
   <div class="third-column">
-    <h4>OPEN HOURS</h4>
+    <h4>OPERATING HOURS</h4>
     <p style="font-weight: bold;">Monday to Friday</p>
     <p>6:00 AM TO 11:00 PM</p>
     <p style="font-weight: bold;">Saturday to Sunday</p>

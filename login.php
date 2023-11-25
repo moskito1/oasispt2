@@ -24,7 +24,7 @@ unset($_SESSION["errormsg"]);
         <div class="title">
         <h2>LOGIN</h2>
         </div>
-        <form method="POST" action="formprocess.php" id="customer-login">
+        <form method="POST" action="formprocess.php" id="customer-login" autocomplete="off">
           <div class="form-field">
             <i class="fa fa-solid fa-user"></i>
             <input type="text" id="customer-username" name="username" required>

@@ -18,10 +18,15 @@ if ($stmt) {
   $result = mysqli_stmt_get_result($stmt);
 }
 
+$totalQuantity = 0;
+$totalPrice = 0.00;
 $data = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $data[] = $row;
+    $totalQuantity += $row['quantity'];
+    $totalPrice += $row['price'] * $row['quantity'];
 }
+
 
 mysqli_stmt_close($stmt);
 mysqli_close($conn);
@@ -90,14 +95,21 @@ mysqli_close($conn);
                     </form>
                 </div>
             </div>
+            
 
             <?php
         }
+        
     } else {
       echo '<p class="empty-cart-content">Your cart is empty.</p>';
     }
     ?>
+   
   </div>
+  <div class="cart-total">
+            <p>Total: ₱<?php echo number_format($totalPrice, 2); ?></p>
+      </div>
+
   </section>
   </div>
   
