@@ -39,6 +39,7 @@ mysqli_close($conn);
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Menu - Oasis Cafe</title>
 </head>
 <body>
 <section class="menu-header">

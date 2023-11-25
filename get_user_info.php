@@ -2,7 +2,7 @@
 
   if (isset($_SESSION["username"])) {
     $username = $_SESSION['username'];
-    $sql = "SELECT userimg, firstname, lastname FROM userInfo WHERE username = ?";
+    $sql = "SELECT * FROM userInfo WHERE username = ?";
     $stmt = mysqli_stmt_init($conn);
 
     if (mysqli_stmt_prepare($stmt, $sql)){
@@ -14,7 +14,9 @@
             $userProfilePicture = $row['userimg'];
             $userFirstName = $row['firstname'];
             $userLastName = $row['lastname'];
-            
+            $userEmail = $row['email'];
+            $userAddress = $row['useraddress'];
+            $userContact = $row['contactno'];
         }
         
         mysqli_stmt_close($stmt);
