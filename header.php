@@ -36,7 +36,7 @@ include "dbconnection.php";
                       <i class="fa fa-user"></i>
                     </div>
                     <div class="user-settings-title">
-                    <a href="">Profile Info</a>
+                    <a href="profile.php">Profile Info</a>
                     </div>
                   </div>
                   <div class="user-settings-items">
