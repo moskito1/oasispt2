@@ -34,7 +34,7 @@ session_start();
         </div>
         <div class="text-info">
           <h2>BEHIND THE NAME 'OASIS'</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque beatae quos repudiandae delectus, id eaque adipisci optio magni fugit veritatis quaerat, accusantium voluptatem quam voluptatibus nulla ut! Voluptatum, voluptatem eius!</p>
+          <p>The name "Oasis" is meant to describe a refuge or source of relief from something difficult or unpleasant. This is where the idea for the name "Oasis" originated and it aptly reflects the idea that Oasis coffee offers a comforting escape through its carefully crafted brews.</p>
         </div>
       </div>
       <div class="info">
