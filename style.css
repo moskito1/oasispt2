@@ -750,4 +750,15 @@
   cursor: pointer;
   border-radius: 3px;
 }
+
+.cart-total{
+  display: flex;
+  position: absolute;
+  margin-top: 93.2vh;
+  right: 280px;
+}
+
+.cart-total p {
+  font-weight: bold;
+}
 /* cart end */
