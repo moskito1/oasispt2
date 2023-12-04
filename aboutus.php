@@ -22,7 +22,7 @@ session_start();
       <div class="info">
         <div class="text-info">
           <h2>OUR BACKGROUND</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque beatae quos repudiandae delectus, id eaque adipisci optio magni fugit veritatis quaerat, accusantium voluptatem quam voluptatibus nulla ut! Voluptatum, voluptatem eius!</p>
+          <p> ipsum dolor sit amet consectetur adipisicing elit. Atque beatae quos repudiandae delectus, id eaque adipisci optio magni fugit veritatis quaerat, accusantium voluptatem quam voluptatibus nulla ut! Voluptatum, voluptatem eius!</p>
         </div>
         <div class="img-info">
           <img src="imgs\Menu\1.jpg" alt=""class="landscape">
@@ -48,7 +48,7 @@ session_start();
         </div>
       </div>
       <div class="qoute-container">
-        <p>"Let our coffee warm your soul"</p>
+        <p>"Let our coffee replenish your soul"</p>
       </div>
     </div>
     
