@@ -1,5 +1,5 @@
   <?php
-
+  include "dbconnection.php";
   if (isset($_SESSION["username"])) {
     $username = $_SESSION['username'];
     $sql = "SELECT * FROM userInfo WHERE username = ?";

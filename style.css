@@ -323,7 +323,11 @@
   visibility: hidden;
   font-size: 0.75em;
 }
-
+.errordiv .error-message {
+  color: #df3434;
+  margin-top: -30px;
+  margin-bottom: 10px;
+}
 /* login / signup end */
 
 /* menu start */
@@ -607,7 +611,7 @@
 
 .qoute-container p {
   position: absolute;
-  font-size: 64px;
+  font-size: 3.7em;
   top: 80px;
   left: 80px;
   font-weight: 200;
@@ -751,7 +755,7 @@
   border-radius: 3px;
 }
 
-.cart-total{
+.cart-total {
   display: flex;
   position: absolute;
   margin-top: 93.2vh;
@@ -762,3 +766,58 @@
   font-weight: bold;
 }
 /* cart end */
+
+.profile-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 80px;
+  gap: 100px;
+  margin-top: 50px;
+}
+
+.picture img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+
+.name-div {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.name-div p {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.others .blank {
+  font-style: italic;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+.picture {
+  position: relative;
+}
+.round {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #00b4ff;
+  width: 32px;
+  height: 32px;
+  line-height: 33px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.round input[type="file"] {
+  position: absolute;
+  transform: scale(2);
+  opacity: 0;
+}

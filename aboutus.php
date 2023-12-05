@@ -25,12 +25,12 @@ session_start();
           <p> ipsum dolor sit amet consectetur adipisicing elit. Atque beatae quos repudiandae delectus, id eaque adipisci optio magni fugit veritatis quaerat, accusantium voluptatem quam voluptatibus nulla ut! Voluptatum, voluptatem eius!</p>
         </div>
         <div class="img-info">
-          <img src="imgs\Menu\1.jpg" alt=""class="landscape">
+          <img src="imgs\about-us\background.jpg" alt=""class="landscape">
         </div>
       </div>
       <div class="info">
         <div class="img-info">
-        <img src="imgs\Menu\1.jpg" alt=""class="landscape">
+        <img src="imgs\about-us\behind-name.avif" alt=""class="landscape">
         </div>
         <div class="text-info">
           <h2>BEHIND THE NAME 'OASIS'</h2>
@@ -40,11 +40,12 @@ session_start();
       <div class="info">
         <div class="text-info">
           <h2>OUR LOCATION</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque beatae quos repudiandae delectus, id eaque adipisci optio magni fugit veritatis quaerat, accusantium voluptatem quam voluptatibus nulla ut! Voluptatum, voluptatem eius!</p>
+          <p>Our cafe is located at Near Pyur Luxury, Ascott, 5th Avenue Corner
+28th Street, Bonifactio Global City, Metro Manila. It is opened from Monday to Friday at 6:00am to 11:pm and from Saturday to Sunday at 8:00am to 1:00am.</p>
         </div>
         <div class="img-info">
-          <img src="imgs\Menu\1.jpg" alt="" class="landscape">
-          <img src="imgs\Menu\1.jpg" alt="" class="portrait">
+          <img src="imgs\about-us\location-landscape.jpg" alt="" class="landscape">
+          <img src="imgs\about-us\location-portrait.avif" alt="" class="portrait">
         </div>
       </div>
       <div class="qoute-container">
